@@ -30,8 +30,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['def train_sarimax(train_data, exog_train, order, seasonal_order):', '    """', '    Entrena el modelo SARIMAX ', '    """', '    model = SARIMAX(train_data,']
+['def configure_tf():', '    K.set_floatx("float32")', '    os.environ[\'TF_CPP_MIN_LOG_LEVEL\'] = "3"', '    physical_devices = tf.config.list_physical_devices("GPU")', '    if physical_devices:']
 ...
-['', '# Seleccionar el modelo con menor AIC', 'index_min = np.argmin(aic_values)', 'best_param, best_seasonal_param = parameters[index_min]', "print('Mejores parámetros:', best_param, best_seasonal_param)"]
+['        key, neurons, dropout_rate, batch_size = combo', '        df_model = datasets.get(key)', '        df_model = df_model.loc[df_model["dim"].isin(df_model["dim"].unique())]', '        result = process_and_train_models(key, df_model, model_types, neurons, dropout_rate,batch_size)', '        all_results.append(result)']
 -------------------
 
